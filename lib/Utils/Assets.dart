@@ -3,4 +3,5 @@ class Assets {
   static const String splashScreenLogo = 'assets/images/spalsh_screen_logo.png';
   static const String logo = 'assets/images/logo.png';
   static const String taxiImage = 'assets/images/taxi.png';
+  static const String profileImage = 'assets/images/menu_profile_pic.png';
 }

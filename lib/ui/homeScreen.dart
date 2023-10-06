@@ -5,7 +5,6 @@ import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:rov_clone/Utils/Assets.dart';
 import 'package:rov_clone/Utils/commonComponents/button.dart';
 import 'package:rov_clone/Utils/commonComponents/editText.dart';
-import 'package:rov_clone/ui/enterMobile.dart';
 import 'package:rov_clone/ui/notification.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -132,11 +131,11 @@ class _HomeScreenState extends State<HomeScreen> {
               leading: const Icon(Icons.logout),
               title: const Text('Logout'),
               onTap: () {
-                //clear the storage and Shared prefs
-                Navigator.pushReplacement(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const EnterMobileScreen()));
+                Navigator.pop(context);
+                showDialog(
+                    context: context,
+                    builder: (BuildContext context) =>
+                        _buildPopupDialog(context));
               },
             ),
           ],
@@ -270,6 +269,28 @@ class _HomeScreenState extends State<HomeScreen> {
           ],
         ),
       ),
+    );
+  }
+
+  Widget _buildPopupDialog(BuildContext context) {
+    return new AlertDialog(
+      title: const Text('Popup example'),
+      content: new Column(
+        mainAxisSize: MainAxisSize.min,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+          Text("Hello"),
+        ],
+      ),
+      actions: <Widget>[
+        MaterialButton(
+          onPressed: () {
+            Navigator.of(context).pop();
+          },
+          textColor: Theme.of(context).primaryColor,
+          child: const Text('Close'),
+        ),
+      ],
     );
   }
 }

@@ -1,6 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:rov_clone/ui/homeScreen.dart';
+
 import '../Utils/commonComponents/button.dart';
 import '../Utils/commonComponents/editText.dart';
 
@@ -77,8 +78,7 @@ class _VerifyMobileState extends State<VerifyMobile> {
           ),
           Button(
             onPressed: () {
-              Navigator.pushReplacement(
-                  context,
+              Navigator.push(context,
                   MaterialPageRoute(builder: (context) => const HomeScreen()));
             },
             btnText: "Verify",

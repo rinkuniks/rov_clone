@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:rov_clone/Utils/Assets.dart';
 import 'package:rov_clone/Utils/commonComponents/button.dart';
 import 'package:rov_clone/Utils/commonComponents/editText.dart';
+import 'package:rov_clone/ui/notification.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -46,6 +47,10 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
             onPressed: () {
               // do something
+              Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const NotificationScreen()));
             },
           ),
         ],

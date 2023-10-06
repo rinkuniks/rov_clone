@@ -265,7 +265,7 @@ class _HomeScreenState extends State<HomeScreen> {
           children: [
             Image.asset(imageUrl ?? Assets.taxiImage),
             Text(rideName ?? "Standard"),
-            Text('\$ $amount ' "/mi" ?? "\$ 1.5/mi"),
+            Text('\$ $amount ' "/mi"),
           ],
         ),
       ),
@@ -273,12 +273,12 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   Widget _buildPopupDialog(BuildContext context) {
-    return new AlertDialog(
+    return AlertDialog(
       title: const Text('Popup example'),
-      content: new Column(
+      content: Column(
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[
+        children: const <Widget>[
           Text("Hello"),
         ],
       ),

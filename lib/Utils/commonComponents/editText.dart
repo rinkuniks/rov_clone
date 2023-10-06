@@ -4,14 +4,15 @@ class EditText extends StatefulWidget {
   final String labelText;
   final int? maxLen;
   final TextEditingController myController;
-  final ValueChanged<String> onChange;
+  final ValueChanged<String>? onChange;
   final TextInputType? inputType;
 
-  const EditText({super.key,
+  const EditText({
+    super.key,
     required this.labelText,
     this.maxLen,
     required this.myController,
-    required this.onChange,
+    this.onChange,
     this.inputType,
   });
 
@@ -37,6 +38,7 @@ class _EditTextState extends State<EditText> {
               maxLength: widget.maxLen ?? 250,
               keyboardType: widget.inputType ?? TextInputType.text,
               decoration: InputDecoration(
+                counterText: "",
                 labelText: widget.labelText,
                 labelStyle: const TextStyle(
                   color: Colors.black87,
